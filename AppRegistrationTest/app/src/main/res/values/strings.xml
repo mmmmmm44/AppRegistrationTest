@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppRegistrationTest</string>
+    <string name="phone_number_text_hint">Enter your phone number</string>
+    <string name="sign_in_text">New to Us ? <u>Sign In</u></string>
+    <string name="input_phone_number_text">Input phone number</string>
+    <string name="wait_reg_code_text">I sent you a code, it will be detected automatically but if it is not detected you can put it below manually as well</string>
+    <string name="choose_elective_text">Choose your selected electives</string>
+</resources>
