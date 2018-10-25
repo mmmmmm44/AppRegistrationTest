@@ -2,6 +2,7 @@ package com.appregistrationtest;
 
 import android.content.Intent;
 import android.os.Debug;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,6 +13,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegStd4Activity extends AppCompatActivity {
 
@@ -62,6 +69,7 @@ public class RegStd4Activity extends AppCompatActivity {
                     return;
                 }
 
+                //Set the shown choice to the spinner
                 classSpinner.setAdapter(new ArrayAdapter<>(RegStd4Activity.this, android.R.layout.simple_spinner_dropdown_item, SchoolData.schoolClasses[position]));
             }
 
@@ -86,13 +94,30 @@ public class RegStd4Activity extends AppCompatActivity {
 
                 Intent intent = new Intent(RegStd4Activity.this, RegStd5Activity.class);
 
+                //Get the user class from the intent
                 User user = (User) getIntent().getSerializableExtra(User.USER);
-                user.setPersonalInfo(name, schoolName, schoolClass);
-                intent.putExtra(User.USER, user);
 
+                //Set the personal info to the user object
+                user.setPersonalInfo(name, schoolName, schoolClass);
+
+                //Update the database of the user
+                FirebaseDatabase.getInstance().getReference("Users")
+                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        //Make a toast to notice the user if successful
+                        if(task.isSuccessful()){
+                            Toast.makeText(RegStd4Activity.this, getString(R.string.after_filling_personal_info), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+                //Continue carrying the user object to the next activity
+                intent.putExtra(User.USER, user);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Clean other activities when start the following up activity
                 startActivity(intent);
-
             }
         });
     }

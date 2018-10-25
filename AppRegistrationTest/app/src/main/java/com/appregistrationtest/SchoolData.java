@@ -15,7 +15,7 @@ public class SchoolData {
             "Ethics and Religious Studies", "Geography", "History", "Tourism and Hospitality Studies",
             "Biology", "Chemistry", "Physics",
             "Business, Accounting and Financial Studies", "Information and Communication Technology",
-            "Music", "Visual Arts", "Physical Education"
+            "Music", "Visual Arts", "Physical Education", "Not Applicable"
     };
 
 }

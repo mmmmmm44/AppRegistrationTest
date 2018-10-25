@@ -32,5 +32,14 @@ public class Reg1Activity extends AppCompatActivity {
 
             }
         });
+
+        findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Reg1Activity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Clean other activities when start the following up activity
+                startActivity(intent);
+            }
+        });
     }
 }

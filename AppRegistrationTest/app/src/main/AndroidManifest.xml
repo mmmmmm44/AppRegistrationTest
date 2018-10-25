@@ -23,6 +23,9 @@
         <activity android:name=".Reg3Activity" />
         <activity android:name=".RegStd4Activity" />
         <activity android:name=".RegStd5Activity"></activity>
+
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".VerifyPhoneActivity"/>
     </application>
 
 </manifest>

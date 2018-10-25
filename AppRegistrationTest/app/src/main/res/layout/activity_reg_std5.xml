@@ -102,14 +102,30 @@
         </Spinner>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView8"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:gravity="center"
-        android:text="M1 / M2"
-        android:textSize="36sp" />
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:text="M1 / M2"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/btnUncheck"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:text="Uncheck"
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <RadioGroup
         android:id="@+id/radioGpM12"

@@ -11,24 +11,32 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Spinner countrySpinner;
-    EditText phoneNumberEditText;
-    TextView signInText;
+
+    TextView signInText, loginInText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        countrySpinner = findViewById(R.id.spinnerCountries);
-        phoneNumberEditText = findViewById(R.id.editTextPhoneNo);
+        loginInText = findViewById(R.id.textLoginIn);
         signInText = findViewById(R.id.textSignIn);
 
-        countrySpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
+        loginInText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Go to the next activity to login
+
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         signInText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Go to the next activity to register
+
                 Intent intent = new Intent(MainActivity.this, Reg1Activity.class);
                 startActivity(intent);
             }
