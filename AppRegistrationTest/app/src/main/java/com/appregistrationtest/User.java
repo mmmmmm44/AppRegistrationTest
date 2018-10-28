@@ -1,6 +1,7 @@
 package com.appregistrationtest;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * A user class to store their information
@@ -18,7 +19,7 @@ public class User implements Serializable{
     public String name;
     public String schoolName;
     public String schoolClass;
-    public String[] electives;
+    public ArrayList<String> electives;
 
     /**
      *  Create a new user with empty constructor
@@ -57,9 +58,9 @@ public class User implements Serializable{
 
     /**
      * Set the electives of the user chosen
-     * @param electives the electives packed in a String[]
+     * @param electives the electives packed in a ArrayList<String>
      */
-    public void setElectives (String[] electives){
+    public void setElectives (ArrayList<String> electives){
         this.electives = electives;
     }
 }

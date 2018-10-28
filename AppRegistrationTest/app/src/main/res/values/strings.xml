@@ -9,4 +9,6 @@
     <string name="after_filling_personal_info">Information is confirmed. Please continue the registration process.</string>
     <string name="after_filling_electives">Electives are confirmed. Please continue the registration process</string>
     <string name="choose_elective_text">Choose your selected electives</string>
+    <string name="not_applicable">Not Applicable</string>
+    <string name="reg_end">You are ready to use! Click Go! to continue</string>
 </resources>

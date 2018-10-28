@@ -101,7 +101,7 @@ public class RegStd4Activity extends AppCompatActivity {
                 user.setPersonalInfo(name, schoolName, schoolClass);
 
                 //Update the database of the user
-                FirebaseDatabase.getInstance().getReference("Users")
+                /*FirebaseDatabase.getInstance().getReference("Users")
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -112,7 +112,7 @@ public class RegStd4Activity extends AppCompatActivity {
                             Toast.makeText(RegStd4Activity.this, getString(R.string.after_filling_personal_info), Toast.LENGTH_LONG).show();
                         }
                     }
-                });
+                });*/
 
                 //Continue carrying the user object to the next activity
                 intent.putExtra(User.USER, user);

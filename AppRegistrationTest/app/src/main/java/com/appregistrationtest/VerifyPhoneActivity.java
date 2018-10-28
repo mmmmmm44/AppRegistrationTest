@@ -111,12 +111,12 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
                     //Send the user to the Home Page
 
-                    //Intent intent = new Intent(Reg3Activity.this, RegStd4Activity.class);
-
-                    //.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Clean other activities when start the following up activity
-                    //startActivity(intent);
+                    Intent intent = new Intent(VerifyPhoneActivity.this, HomeActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Clean other activities when start the following up activity
+                    finish(); //Finish itself
+                    startActivity(intent);
                 }else{
-                    //Toast.makeText(Reg3Activity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(VerifyPhoneActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });

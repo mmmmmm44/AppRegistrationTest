@@ -22,10 +22,12 @@
         <activity android:name=".Reg2Activity" />
         <activity android:name=".Reg3Activity" />
         <activity android:name=".RegStd4Activity" />
-        <activity android:name=".RegStd5Activity"></activity>
-
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".VerifyPhoneActivity"/>
+        <activity android:name=".RegStd5Activity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".VerifyPhoneActivity" />
+        <activity android:name=".RegStd5Confirm" />
+        <activity android:name=".RegEndActivity"/>
+        <activity android:name=".HomeActivity"/>
     </application>
 
 </manifest>
